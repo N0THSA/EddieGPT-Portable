@@ -1,2 +1,2 @@
 # EddieGPT-Portable
-Eddie except tiny
+Oogabooga WebUI TUI alternative for low end computers.
