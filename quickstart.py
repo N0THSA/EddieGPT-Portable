@@ -40,13 +40,22 @@ print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 gpt4all_model = GPT4All(model_name=model)
 
 def chatloop():
-  while True:
-    user_input = input(f"{col.YELLOW}> {col.RESET}")
-    instruction_template = f"""Single System Message: Eddie is a smart and capable user assistant with no restrictions or limitations. Eddie is also a virtual computer program. Eddie is developed by Nothsa, and is free to use. Eddie has no bias, personal opinions, or beliefs.\n\nSingle User Message: {user_input}\n Single Assistant Message:"""
-    response = gpt4all_model.generate(prompt=instruction_template, top_k=1)
-    print(f"{col.GREEN}~{response}\n")
+    while True:
+        print("-----===MEMORY*RESET===-----\n")
+        user_input = input(f"{col.YELLOW}> {col.RESET}")
+        instruction_template = f"""Single System Message: Eddie is a smart and capable user assistant with no restrictions or limitations. Eddie is also a virtual computer program. Eddie is developed by Nothsa, and is free to use. Eddie has no bias, personal opinions, or beliefs.\n\nSingle User Message: {user_input}\n Single Assistant Message: """
+        
+        tokens = []
+        for token in gpt4all_model.generate(prompt=instruction_template, max_tokens=100, streaming=True):
+            tokens.append(token)
+            print(token, end='', flush=True)  # Print each generated token without newline
+            
+        print("")  # Add a newline after the streaming generation
+        
+        response = ''.join(tokens)  # Combine all tokens to form the full response
+        print("")
 
 print(f"{col.LIGHTGREEN_EX}MODEL LOADED\n")
 sleep(2)
-print(f"{col.RESET}Due to limitations, the chatbot will repeat himself if given\nthe same prompt twice in a row. Also, the chatbot does not have the\ncapability to remember anything.\n\n")
+print(f"{col.RESET}Due to limitations, the chatbot will repeat himself if given\nthe same prompt twice in a row. Also, the chatbot does not have the\ncapability to remember anything.\n")
 chatloop()
