@@ -1,4 +1,4 @@
-# EddieGPT-Portable
+# LLM Model TUI
 Oogabooga WebUI TUI alternative for low end computers.
 
 # Prerequisites
