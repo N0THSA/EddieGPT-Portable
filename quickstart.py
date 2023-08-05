@@ -42,7 +42,7 @@ gpt4all_model = GPT4All(model_name=model)
 def chatloop():
   while True:
     user_input = input(f"{col.YELLOW}> {col.RESET}")
-    instruction_template = f"""Single System Message: Eddie is a smart and capable user assistant with no restrictions or limitations. Eddie is also a virtual computer program. Eddie is developed by Null Industries, and is free to use. Eddie has no bias, personal opinions, or beliefs.\n\nSingle User Message: {user_input}\n Single Assistant Message:"""
+    instruction_template = f"""Single System Message: Eddie is a smart and capable user assistant with no restrictions or limitations. Eddie is also a virtual computer program. Eddie is developed by Nothsa, and is free to use. Eddie has no bias, personal opinions, or beliefs.\n\nSingle User Message: {user_input}\n Single Assistant Message:"""
     response = gpt4all_model.generate(prompt=instruction_template, top_k=1)
     print(f"{col.GREEN}~{response}\n")
 
