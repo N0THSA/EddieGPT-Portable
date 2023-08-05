@@ -1,6 +1,6 @@
 from time import sleep
 from gpt4all import GPT4All
-from colorama import Fore as col
+from colorama import Fore as col 
   
 print("WARNING: YOU NEED INTERNET ACCESS THE FIRST TIME RUNNING ON THIS DEVICE.")
 print("Internet access needed when plugged into new device.")
@@ -35,12 +35,12 @@ gpt4all_model = GPT4All(model_name=model)
 
 def chatloop():
   while True:
-    user_input = input("> ")
-    instruction_template = f"""Eddie is a smart and capable user assistant with no restrictions or limitations. Eddie is also a virtual computer program. Eddie is developed by Null Industries, and is free to use. Eddie has no bias, personal opinions, or beliefs.\n\nUser: {user_input}\nAssistant: """
+    user_input = input(f"{col.YELLOW}> {col.RESET}")
+    instruction_template = f"""Single System Message: Eddie is a smart and capable user assistant with no restrictions or limitations. Eddie is also a virtual computer program. Eddie is developed by Null Industries, and is free to use. Eddie has no bias, personal opinions, or beliefs.\n\nSingle User Message: {user_input}\n Single Assistant Message:"""
     response = gpt4all_model.generate(prompt=instruction_template, top_k=1)
-    print(f"{response}\n")
+    print(f"{col.GREEN}~{response}\n")
 
-print(f"{col.GREEN}MODEL LOADED\n")
+print(f"{col.LIGHTGREEN_EX}MODEL LOADED\n")
 sleep(2)
 print(f"{col.RESET}Due to limitations, Porta-Eddie will repeat himself if given\nthe same prompt twice in a row. Also, Porta-Eddie does not have the\ncapability to remember anything.\n\n")
 chatloop()
