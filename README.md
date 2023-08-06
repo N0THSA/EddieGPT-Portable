@@ -14,4 +14,7 @@ Then run the following command to start:
 `python3 quickstart.py`
 
 It will take time to download and load your selected model.
-Find more GPT4ALL models here: https://raw.githubusercontent.com/nomic-ai/gpt4all/main/gpt4all-chat/metadata/models.json
+Find more GPT4ALL models here:
+
+https://raw.githubusercontent.com/nomic-ai/gpt4all/main/gpt4all-chat/metadata/models.json
+https://huggingface.co/TheBloke (make sure to only get GGML models with "4_0" in the name)
