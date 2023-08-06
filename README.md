@@ -17,4 +17,4 @@ It will take time to download and load your selected model.
 Find more GPT4ALL models here:
 
 https://raw.githubusercontent.com/nomic-ai/gpt4all/main/gpt4all-chat/metadata/models.json
-https://huggingface.co/TheBloke (make sure to only get GGML models with "4_0" in the name)
+https://huggingface.co/TheBloke (make sure to only get 13B GGML models or below with "4_0" in the name)
